@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJ Set</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>DJ SET</h1>
-    <p>Mon jeu de références de films</p>
+
+    <main class="game">
+
+        <h1>🎬 DJ SET</h1>
+
+        <p id="counter">Référence 1 / 8</p>
+
+        <div class="reference">
+            <h2 id="reference-title">Référence 1</h2>
+            <p id="points">1 POINT</p>
+        </div>
+
+        <button onclick="nextReference()">RÉFÉRENCE SUIVANTE →</button>
+
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
