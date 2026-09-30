@@ -143,7 +143,7 @@ categories.pirates.references = [
             "Jack Sparrow s'échappe de Port Royal avec le Black Pearl.",
 
         audio:
-            "audio/pirates1.mp3"
+            "pirates1.mp3"
     },
 
     {
