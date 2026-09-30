@@ -3,7 +3,9 @@
 // ===============================
 
 const params = new URLSearchParams(window.location.search);
-const category = params.get("cat");
+const category = (params.get("cat") || "").trim().toLowerCase();
+
+console.log("Catégorie détectée :", category);
 
 
 // ===============================
