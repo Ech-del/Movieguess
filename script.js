@@ -7,7 +7,7 @@ const category = params.get("cat");
 
 
 // ===============================
-// LES 3 CATÉGORIES
+// LES CATÉGORIES ET LEURS 8 RÉFÉRENCES
 // ===============================
 
 const categories = {
@@ -16,14 +16,38 @@ const categories = {
         name: "🏴‍☠️ Pirates des Caraïbes",
 
         references: [
-            "Pirates — Référence 1",
-            "Pirates — Référence 2",
-            "Pirates — Référence 3",
-            "Pirates — Référence 4",
-            "Pirates — Référence 5",
-            "Pirates — Référence 6",
-            "Pirates — Référence 7",
-            "Pirates — Référence 8"
+            {
+                titre: "Référence 1",
+                reponse: "Réponse Pirates 1"
+            },
+            {
+                titre: "Référence 2",
+                reponse: "Réponse Pirates 2"
+            },
+            {
+                titre: "Référence 3",
+                reponse: "Réponse Pirates 3"
+            },
+            {
+                titre: "Référence 4",
+                reponse: "Réponse Pirates 4"
+            },
+            {
+                titre: "Référence 5",
+                reponse: "Réponse Pirates 5"
+            },
+            {
+                titre: "Référence 6",
+                reponse: "Réponse Pirates 6"
+            },
+            {
+                titre: "Référence 7",
+                reponse: "Réponse Pirates 7"
+            },
+            {
+                titre: "Référence 8",
+                reponse: "Réponse Pirates 8"
+            }
         ]
     },
 
@@ -32,14 +56,38 @@ const categories = {
         name: "🦸 Marvel",
 
         references: [
-            "Marvel — Référence 1",
-            "Marvel — Référence 2",
-            "Marvel — Référence 3",
-            "Marvel — Référence 4",
-            "Marvel — Référence 5",
-            "Marvel — Référence 6",
-            "Marvel — Référence 7",
-            "Marvel — Référence 8"
+            {
+                titre: "Référence 1",
+                reponse: "Réponse Marvel 1"
+            },
+            {
+                titre: "Référence 2",
+                reponse: "Réponse Marvel 2"
+            },
+            {
+                titre: "Référence 3",
+                reponse: "Réponse Marvel 3"
+            },
+            {
+                titre: "Référence 4",
+                reponse: "Réponse Marvel 4"
+            },
+            {
+                titre: "Référence 5",
+                reponse: "Réponse Marvel 5"
+            },
+            {
+                titre: "Référence 6",
+                reponse: "Réponse Marvel 6"
+            },
+            {
+                titre: "Référence 7",
+                reponse: "Réponse Marvel 7"
+            },
+            {
+                titre: "Référence 8",
+                reponse: "Réponse Marvel 8"
+            }
         ]
     },
 
@@ -48,14 +96,38 @@ const categories = {
         name: "⭐ Star Wars",
 
         references: [
-            "Star Wars — Référence 1",
-            "Star Wars — Référence 2",
-            "Star Wars — Référence 3",
-            "Star Wars — Référence 4",
-            "Star Wars — Référence 5",
-            "Star Wars — Référence 6",
-            "Star Wars — Référence 7",
-            "Star Wars — Référence 8"
+            {
+                titre: "Référence 1",
+                reponse: "Réponse Star Wars 1"
+            },
+            {
+                titre: "Référence 2",
+                reponse: "Réponse Star Wars 2"
+            },
+            {
+                titre: "Référence 3",
+                reponse: "Réponse Star Wars 3"
+            },
+            {
+                titre: "Référence 4",
+                reponse: "Réponse Star Wars 4"
+            },
+            {
+                titre: "Référence 5",
+                reponse: "Réponse Star Wars 5"
+            },
+            {
+                titre: "Référence 6",
+                reponse: "Réponse Star Wars 6"
+            },
+            {
+                titre: "Référence 7",
+                reponse: "Réponse Star Wars 7"
+            },
+            {
+                titre: "Référence 8",
+                reponse: "Réponse Star Wars 8"
+            }
         ]
     }
 
@@ -78,56 +150,93 @@ if (!categories[category]) {
 
 
 // ===============================
-// AFFICHAGE DE LA CATÉGORIE
+// VARIABLES
+// ===============================
+
+let currentReference = 1;
+let answerShown = false;
+
+
+// ===============================
+// AFFICHAGE INITIAL
 // ===============================
 
 if (categories[category]) {
 
     const currentCategory = categories[category];
+    const reference = currentCategory.references[0];
 
     document.getElementById("category-title").textContent =
         currentCategory.name;
 
     document.getElementById("reference-title").textContent =
-        currentCategory.references[0];
+        reference.titre;
 
 }
 
 
 // ===============================
-// RÉFÉRENCE ACTUELLE
+// AFFICHER LA RÉPONSE
 // ===============================
 
-let currentReference = 1;
+function showAnswer() {
+
+    const currentCategory = categories[category];
+    const reference = currentCategory.references[currentReference - 1];
+
+    document.getElementById("answer").textContent =
+        reference.reponse;
+
+    document.getElementById("answer").style.display =
+        "block";
+
+    answerShown = true;
+
+    document.getElementById("answer-button").style.display =
+        "none";
+}
 
 
 // ===============================
-// BOUTON RÉFÉRENCE SUIVANTE
+// RÉFÉRENCE SUIVANTE
 // ===============================
 
 function nextReference() {
 
+    const currentCategory = categories[category];
+
     currentReference++;
 
-    const currentCategory = categories[category];
+    answerShown = false;
 
     // Si on est encore dans les 8 références
     if (currentReference <= 8) {
+
+        const reference =
+            currentCategory.references[currentReference - 1];
 
         document.getElementById("counter").textContent =
             "Référence " + currentReference + " / 8";
 
         document.getElementById("reference-title").textContent =
-            currentCategory.references[currentReference - 1];
+            reference.titre;
 
         document.getElementById("points").textContent =
             currentReference +
             " POINT" +
             (currentReference > 1 ? "S" : "");
 
+        // Cache la réponse précédente
+        document.getElementById("answer").style.display =
+            "none";
+
+        // Réaffiche le bouton
+        document.getElementById("answer-button").style.display =
+            "inline-block";
+
     }
 
-    // Si les 8 références sont terminées
+    // Fin du jeu
     else {
 
         document.querySelector(".game").innerHTML = `
