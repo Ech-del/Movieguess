@@ -7,131 +7,116 @@ const category = params.get("cat");
 
 
 // ===============================
-// LES CATÉGORIES ET LEURS 8 RÉFÉRENCES
+// LES 20 CATÉGORIES
 // ===============================
 
 const categories = {
 
-    pirates: {
-        name: "🏴‍☠️ Pirates des Caraïbes",
-
-        references: [
-            {
-                titre: "Référence 1",
-                reponse: "Réponse Pirates 1"
-            },
-            {
-                titre: "Référence 2",
-                reponse: "Réponse Pirates 2"
-            },
-            {
-                titre: "Référence 3",
-                reponse: "Réponse Pirates 3"
-            },
-            {
-                titre: "Référence 4",
-                reponse: "Réponse Pirates 4"
-            },
-            {
-                titre: "Référence 5",
-                reponse: "Réponse Pirates 5"
-            },
-            {
-                titre: "Référence 6",
-                reponse: "Réponse Pirates 6"
-            },
-            {
-                titre: "Référence 7",
-                reponse: "Réponse Pirates 7"
-            },
-            {
-                titre: "Référence 8",
-                reponse: "Réponse Pirates 8"
-            }
-        ]
+    vo: {
+        name: "🎙️ VO"
     },
 
+    pirates: {
+        name: "🏴‍☠️ Pirates des Caraïbes"
+    },
+
+    louisdefunes: {
+        name: "😂 Louis de Funès"
+    },
+
+    tonystark: {
+        name: "🤖 Tony Stark"
+    },
 
     marvel: {
-        name: "🦸 Marvel",
-
-        references: [
-            {
-                titre: "Référence 1",
-                reponse: "Réponse Marvel 1"
-            },
-            {
-                titre: "Référence 2",
-                reponse: "Réponse Marvel 2"
-            },
-            {
-                titre: "Référence 3",
-                reponse: "Réponse Marvel 3"
-            },
-            {
-                titre: "Référence 4",
-                reponse: "Réponse Marvel 4"
-            },
-            {
-                titre: "Référence 5",
-                reponse: "Réponse Marvel 5"
-            },
-            {
-                titre: "Référence 6",
-                reponse: "Réponse Marvel 6"
-            },
-            {
-                titre: "Référence 7",
-                reponse: "Réponse Marvel 7"
-            },
-            {
-                titre: "Référence 8",
-                reponse: "Réponse Marvel 8"
-            }
-        ]
+        name: "🦸 Marvel"
     },
 
-
     starwars: {
-        name: "⭐ Star Wars",
+        name: "⭐ Star Wars"
+    },
 
-        references: [
-            {
-                titre: "Référence 1",
-                reponse: "Réponse Star Wars 1"
-            },
-            {
-                titre: "Référence 2",
-                reponse: "Réponse Star Wars 2"
-            },
-            {
-                titre: "Référence 3",
-                reponse: "Réponse Star Wars 3"
-            },
-            {
-                titre: "Référence 4",
-                reponse: "Réponse Star Wars 4"
-            },
-            {
-                titre: "Référence 5",
-                reponse: "Réponse Star Wars 5"
-            },
-            {
-                titre: "Référence 6",
-                reponse: "Réponse Star Wars 6"
-            },
-            {
-                titre: "Référence 7",
-                reponse: "Réponse Star Wars 7"
-            },
-            {
-                titre: "Référence 8",
-                reponse: "Réponse Star Wars 8"
-            }
-        ]
+    tomcruise: {
+        name: "🎬 Tom Cruise"
+    },
+
+    christianclavier: {
+        name: "😂 Christian Clavier"
+    },
+
+    sciencefiction: {
+        name: "🚀 Science-fiction"
+    },
+
+    aventure: {
+        name: "🗺️ Aventure"
+    },
+
+    action: {
+        name: "💥 Action"
+    },
+
+    nyc: {
+        name: "🗽 NYC"
+    },
+
+    hollywood: {
+        name: "🎥 Hollywood"
+    },
+
+    comediefrancaise: {
+        name: "🤣 Comédie française"
+    },
+
+    musiquesfilms1: {
+        name: "🎵 Musiques de films 1"
+    },
+
+    musiquesfilms2: {
+        name: "🎵 Musiques de films 2"
+    },
+
+    disney: {
+        name: "✨ Disney"
+    },
+
+    pixar: {
+        name: "🧸 Pixar"
+    },
+
+    seriesamericaines: {
+        name: "📺 Séries américaines"
+    },
+
+    mondesmagiques: {
+        name: "🧙 Mondes imaginaires et magiques"
     }
 
 };
+
+
+// ===============================
+// CRÉATION DES 8 RÉFÉRENCES
+// ===============================
+
+// Pour l'instant, chaque catégorie possède
+// 8 emplacements temporaires.
+// On remplacera ensuite ces textes par
+// les vrais films et les vraies réponses.
+
+for (const key in categories) {
+
+    categories[key].references = [];
+
+    for (let i = 1; i <= 8; i++) {
+
+        categories[key].references.push({
+            titre: "Référence " + i,
+            reponse: "Réponse à définir"
+        });
+
+    }
+}
 
 
 // ===============================
@@ -154,7 +139,6 @@ if (!categories[category]) {
 // ===============================
 
 let currentReference = 1;
-let answerShown = false;
 
 
 // ===============================
@@ -182,15 +166,15 @@ if (categories[category]) {
 function showAnswer() {
 
     const currentCategory = categories[category];
-    const reference = currentCategory.references[currentReference - 1];
+
+    const reference =
+        currentCategory.references[currentReference - 1];
 
     document.getElementById("answer").textContent =
         reference.reponse;
 
     document.getElementById("answer").style.display =
         "block";
-
-    answerShown = true;
 
     document.getElementById("answer-button").style.display =
         "none";
@@ -207,9 +191,10 @@ function nextReference() {
 
     currentReference++;
 
-    answerShown = false;
+    // ===========================
+    // RÉFÉRENCES 1 À 8
+    // ===========================
 
-    // Si on est encore dans les 8 références
     if (currentReference <= 8) {
 
         const reference =
@@ -226,17 +211,19 @@ function nextReference() {
             " POINT" +
             (currentReference > 1 ? "S" : "");
 
-        // Cache la réponse précédente
+        // Cache la réponse
         document.getElementById("answer").style.display =
             "none";
 
         // Réaffiche le bouton
         document.getElementById("answer-button").style.display =
             "inline-block";
-
     }
 
-    // Fin du jeu
+    // ===========================
+    // FIN DU JEU
+    // ===========================
+
     else {
 
         document.querySelector(".game").innerHTML = `
