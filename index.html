@@ -1,43 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Guess</title>
+
+    <title>Movie Guess 🎬</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
     <main class="game">
 
+        <!-- TITRE -->
+
         <h1>🎬 MOVIE GUESS</h1>
 
-        <h2 id="category-title">Catégorie</h2>
 
-        <p id="counter">Référence 1 / 8</p>
+        <!-- CATÉGORIE -->
 
-         <div class="reference">
+        <h2 id="category-title">
+            Catégorie
+        </h2>
 
-    <h2 id="reference-title">Référence 1</h2>
 
-    <p id="points">1 POINT</p>
+        <!-- COMPTEUR -->
 
-    <button id="answer-button" onclick="showAnswer()">
-        👁️ AFFICHER LA RÉPONSE
-    </button>
+        <p id="counter">
+            Référence 1 / 8
+        </p>
 
-    <p id="answer" style="display: none;"></p>
 
-</div>
-        
+        <!-- CARTE DE JEU -->
+
+        <div class="reference">
+
+            <h2 id="reference-title">
+                Référence 1
+            </h2>
+
+            <p id="points">
+                1 POINT
+            </p>
+
+
+            <!-- BOUTON POUR AFFICHER LA RÉPONSE -->
+
+            <button
+                id="answer-button"
+                onclick="showAnswer()"
+            >
+                👁️ AFFICHER LA RÉPONSE
+            </button>
+
+
+            <!-- RÉPONSE CACHÉE -->
+
+            <p
+                id="answer"
+                style="display: none;"
+            ></p>
+
+        </div>
+
+
+        <!-- BOUTON SUIVANT -->
+
         <button onclick="nextReference()">
             RÉFÉRENCE SUIVANTE →
         </button>
 
     </main>
 
+
+    <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
