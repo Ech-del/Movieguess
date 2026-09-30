@@ -5,8 +5,6 @@
 const params = new URLSearchParams(window.location.search);
 const category = (params.get("cat") || "").trim().toLowerCase();
 
-console.log("Catégorie détectée :", category);
-
 
 // ===============================
 // LES 20 CATÉGORIES
@@ -98,13 +96,8 @@ const categories = {
 
 
 // ===============================
-// CRÉATION DES 8 RÉFÉRENCES
+// CRÉATION DES RÉFÉRENCES
 // ===============================
-
-// Pour l'instant, chaque catégorie possède
-// 8 emplacements temporaires.
-// On remplacera ensuite ces textes par
-// les vrais films et les vraies réponses.
 
 for (const key in categories) {
 
@@ -119,6 +112,55 @@ for (const key in categories) {
 
     }
 }
+
+
+// ===============================
+// PIRATES DES CARAÏBES
+// ===============================
+
+categories.pirates.references = [
+
+    {
+        titre: "Référence 1 — 1 POINT",
+        reponse: "Jack Sparrow s'échappe de Port Royal avec le Black Pearl."
+    },
+
+    {
+        titre: "Référence 2 — 2 POINTS",
+        reponse: "Jack Sparrow et Elizabeth Swann sont capturés sur l'île des Pelegostos."
+    },
+
+    {
+        titre: "Référence 3 — 3 POINTS",
+        reponse: "Jack Sparrow cherche la clé du coffre de Davy Jones."
+    },
+
+    {
+        titre: "Référence 4 — 4 POINTS",
+        reponse: "Jack Sparrow se retrouve dans l'antre de Davy Jones avec plusieurs versions de lui-même."
+    },
+
+    {
+        titre: "Référence 5 — 5 POINTS",
+        reponse: "Barbossa boit du rhum alors qu'il est sous la malédiction."
+    },
+
+    {
+        titre: "Référence 6 — 6 POINTS",
+        reponse: "Davy Jones demande à Jack Sparrow s'il a peur de la mort."
+    },
+
+    {
+        titre: "Référence 7 — 7 POINTS",
+        reponse: "Jack Sparrow doit choisir son mode d'exécution."
+    },
+
+    {
+        titre: "Référence 8 — 8 POINTS",
+        reponse: "Will Turner et James Norrington se battent sur la roue géante pendant que Jack poursuit le coffre."
+    }
+
+];
 
 
 // ===============================
@@ -158,6 +200,12 @@ if (categories[category]) {
     document.getElementById("reference-title").textContent =
         reference.titre;
 
+    document.getElementById("counter").textContent =
+        "Référence 1 / 8";
+
+    document.getElementById("points").textContent =
+        "1 POINT";
+
 }
 
 
@@ -193,10 +241,6 @@ function nextReference() {
 
     currentReference++;
 
-    // ===========================
-    // RÉFÉRENCES 1 À 8
-    // ===========================
-
     if (currentReference <= 8) {
 
         const reference =
@@ -213,18 +257,13 @@ function nextReference() {
             " POINT" +
             (currentReference > 1 ? "S" : "");
 
-        // Cache la réponse
         document.getElementById("answer").style.display =
             "none";
 
-        // Réaffiche le bouton
         document.getElementById("answer-button").style.display =
             "inline-block";
-    }
 
-    // ===========================
-    // FIN DU JEU
-    // ===========================
+    }
 
     else {
 
