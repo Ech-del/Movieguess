@@ -1,3 +1,4 @@
+```javascript
 // =====================================================
 // RÉCUPÉRATION DE LA CATÉGORIE
 // =====================================================
@@ -16,85 +17,45 @@ const category =
 
 const categories = {
 
-    vo: {
-        name: "🎙️ VO"
-    },
+    vo: { name: "🎙️ VO" },
 
-    pirates: {
-        name: "🏴‍☠️ Pirates des Caraïbes"
-    },
+    pirates: { name: "🏴‍☠️ Pirates des Caraïbes" },
 
-    louisdefunes: {
-        name: "😂 Louis de Funès"
-    },
+    louisdefunes: { name: "😂 Louis de Funès" },
 
-    tonystark: {
-        name: "🤖 Tony Stark"
-    },
+    tonystark: { name: "🤖 Tony Stark" },
 
-    marvel: {
-        name: "🦸 Marvel"
-    },
+    marvel: { name: "🦸 Marvel" },
 
-    starwars: {
-        name: "⭐ Star Wars"
-    },
+    starwars: { name: "⭐ Star Wars" },
 
-    tomcruise: {
-        name: "🎬 Tom Cruise"
-    },
+    tomcruise: { name: "🎬 Tom Cruise" },
 
-    christianclavier: {
-        name: "😂 Christian Clavier"
-    },
+    christianclavier: { name: "😂 Christian Clavier" },
 
-    sciencefiction: {
-        name: "🚀 Science-fiction"
-    },
+    sciencefiction: { name: "🚀 Science-fiction" },
 
-    aventure: {
-        name: "🗺️ Aventure"
-    },
+    aventure: { name: "🗺️ Aventure" },
 
-    action: {
-        name: "💥 Action"
-    },
+    action: { name: "💥 Action" },
 
-    nyc: {
-        name: "🗽 NYC"
-    },
+    nyc: { name: "🗽 NYC" },
 
-    hollywood: {
-        name: "🎥 Hollywood"
-    },
+    hollywood: { name: "🎥 Hollywood" },
 
-    comediefrancaise: {
-        name: "🤣 Comédie française"
-    },
+    comediefrancaise: { name: "🤣 Comédie française" },
 
-    musiquesfilms1: {
-        name: "🎵 Musiques de films 1"
-    },
+    musiquesfilms1: { name: "🎵 Musiques de films 1" },
 
-    musiquesfilms2: {
-        name: "🎵 Musiques de films 2"
-    },
+    musiquesfilms2: { name: "🎵 Musiques de films 2" },
 
-    disney: {
-        name: "✨ Disney"
-    },
+    disney: { name: "✨ Disney" },
 
-    pixar: {
-        name: "🧸 Pixar"
-    },
+    pixar: { name: "🧸 Pixar" },
 
-    seriesamericaines: {
-        name: "📺 Séries américaines"
-    },
+    seriesamericaines: { name: "📺 Séries américaines" },
 
-    mondesmagiques: {
-        name: "🧙 Mondes imaginaires et magiques"
-    }
+    mondesmagiques: { name: "🧙 Mondes imaginaires et magiques" }
 
 };
 
@@ -150,10 +111,10 @@ categories.pirates.references = [
         titre: "Référence 2 — 2 POINTS",
 
         reponse:
-            "Jack Sparrow et Elizabeth Swann sont capturés sur l'île des Pelegostos.",
+            "Jack Sparrow et Elizabeth Swann sont capturés par les Pelegostos.",
 
         audio:
-            "audio/pirates2.mp3"
+            "pirates2.mp3"
     },
 
     {
@@ -163,17 +124,17 @@ categories.pirates.references = [
             "Jack Sparrow cherche la clé du coffre de Davy Jones.",
 
         audio:
-            "audio/pirates3.mp3"
+            "pirates3.mp3"
     },
 
     {
         titre: "Référence 4 — 4 POINTS",
 
         reponse:
-            "Jack Sparrow se retrouve dans l'antre de Davy Jones avec plusieurs versions de lui-même.",
+            "Jack Sparrow se retrouve dans un endroit étrange avec plusieurs versions de lui-même.",
 
         audio:
-            "audio/pirates4.mp3"
+            "pirates4.mp3"
     },
 
     {
@@ -183,7 +144,7 @@ categories.pirates.references = [
             "Barbossa boit du rhum alors qu'il est sous la malédiction.",
 
         audio:
-            "audio/pirates5.mp3"
+            "pirates5.mp3"
     },
 
     {
@@ -193,7 +154,7 @@ categories.pirates.references = [
             "Davy Jones demande à Jack Sparrow s'il a peur de la mort.",
 
         audio:
-            "audio/pirates6.mp3"
+            "pirates6.mp3"
     },
 
     {
@@ -203,7 +164,7 @@ categories.pirates.references = [
             "Jack Sparrow doit choisir son mode d'exécution.",
 
         audio:
-            "audio/pirates7.mp3"
+            "pirates7.mp3"
     },
 
     {
@@ -213,7 +174,7 @@ categories.pirates.references = [
             "Will Turner et James Norrington se battent sur la roue géante pendant que Jack poursuit le coffre.",
 
         audio:
-            "audio/pirates8.mp3"
+            "pirates8.mp3"
     }
 
 ];
@@ -234,6 +195,7 @@ if (!categories[category]) {
         <p>Utilise un QR code valide.</p>
 
     `;
+
 }
 
 
@@ -245,7 +207,7 @@ let currentReference = 1;
 
 
 // =====================================================
-// ÉLÉMENTS AUDIO
+// ÉLÉMENTS
 // =====================================================
 
 const audioPlayer =
@@ -290,7 +252,7 @@ if (categories[category]) {
 
 
 // =====================================================
-// CHARGER UN AUDIO
+// CHARGER L'AUDIO
 // =====================================================
 
 function loadAudio(reference) {
@@ -299,10 +261,7 @@ function loadAudio(reference) {
 
     audioPlayer.currentTime = 0;
 
-    audioPlayer.removeAttribute("src");
-
-    audioPlayer.load();
-
+    audioPlayer.src = "";
 
     playButton.textContent =
         "▶️ LANCER L'EXTRAIT";
@@ -313,33 +272,53 @@ function loadAudio(reference) {
         audioPlayer.src =
             reference.audio;
 
+        audioPlayer.load();
+
     }
 
 }
 
 
 // =====================================================
-// LANCER / ARRÊTER L'AUDIO
+// PLAY / PAUSE
 // =====================================================
 
-function toggleAudio() {
+async function toggleAudio() {
 
     if (!audioPlayer.src) {
 
         alert(
-            "Aucun extrait audio n'est encore associé à cette référence."
+            "Aucun extrait audio n'est associé à cette référence."
         );
 
         return;
+
     }
 
 
     if (audioPlayer.paused) {
 
-        audioPlayer.play();
+        try {
 
-        playButton.textContent =
-            "⏸️ METTRE EN PAUSE";
+            await audioPlayer.play();
+
+            playButton.textContent =
+                "⏸️ METTRE EN PAUSE";
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Erreur de lecture audio :",
+                error
+            );
+
+            alert(
+                "Impossible de lire cet audio. Vérifie que le fichier MP3 est bien dans le dépôt GitHub."
+            );
+
+        }
 
     }
 
@@ -356,7 +335,44 @@ function toggleAudio() {
 
 
 // =====================================================
-// QUAND L'AUDIO EST TERMINÉ
+// AUDIO MIS EN PAUSE
+// =====================================================
+
+audioPlayer.addEventListener(
+    "pause",
+    function () {
+
+        if (
+            audioPlayer.currentTime > 0 &&
+            !audioPlayer.ended
+        ) {
+
+            playButton.textContent =
+                "▶️ REPRENDRE L'EXTRAIT";
+
+        }
+
+    }
+);
+
+
+// =====================================================
+// AUDIO EN LECTURE
+// =====================================================
+
+audioPlayer.addEventListener(
+    "play",
+    function () {
+
+        playButton.textContent =
+            "⏸️ METTRE EN PAUSE";
+
+    }
+);
+
+
+// =====================================================
+// AUDIO TERMINÉ
 // =====================================================
 
 audioPlayer.addEventListener(
@@ -365,6 +381,23 @@ audioPlayer.addEventListener(
 
         playButton.textContent =
             "▶️ REJOUER L'EXTRAIT";
+
+    }
+);
+
+
+// =====================================================
+// ERREUR AUDIO
+// =====================================================
+
+audioPlayer.addEventListener(
+    "error",
+    function () {
+
+        console.error(
+            "Impossible de charger :",
+            audioPlayer.src
+        );
 
     }
 );
@@ -410,7 +443,7 @@ function nextReference() {
         categories[category];
 
 
-    // ARRÊTER L'AUDIO AVANT DE CHANGER
+    // ARRÊTER L'AUDIO
 
     audioPlayer.pause();
 
@@ -477,3 +510,4 @@ function nextReference() {
     }
 
 }
+```
