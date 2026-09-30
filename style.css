@@ -1,56 +1,299 @@
+/* ===============================
+   MOVIE GUESS — STYLE
+   =============================== */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #111;
+
+    background:
+        radial-gradient(circle at top, #2b1608 0%, #120b07 35%, #050505 75%);
+
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+
     text-align: center;
 }
 
+
+/* ===============================
+   CONTENEUR PRINCIPAL
+   =============================== */
+
 .game {
-    width: 90%;
-    max-width: 600px;
+    width: 92%;
+    max-width: 650px;
+
+    padding: 30px 20px;
 }
+
+
+/* ===============================
+   TITRE
+   =============================== */
 
 h1 {
-    font-size: 45px;
-    margin-bottom: 10px;
+    margin: 0;
+
+    font-size: clamp(38px, 8vw, 64px);
+    font-weight: 900;
+    letter-spacing: 4px;
+
+    color: #ffb13b;
+
+    text-shadow:
+        0 0 10px rgba(255, 177, 59, 0.35),
+        0 0 30px rgba(255, 120, 20, 0.15);
 }
+
+
+/* ===============================
+   CATÉGORIE
+   =============================== */
 
 #category-title {
-    font-size: 28px;
-    margin-top: 5px;
+    margin: 12px 0 5px;
+
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: 700;
+
+    color: #ffffff;
 }
+
+
+/* ===============================
+   COMPTEUR
+   =============================== */
 
 #counter {
-    font-size: 20px;
-    opacity: 0.7;
+    margin: 8px 0 25px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    color: #aaa;
+
+    letter-spacing: 2px;
 }
+
+
+/* ===============================
+   CARTE DE RÉFÉRENCE
+   =============================== */
 
 .reference {
-    margin: 40px 0;
-    padding: 50px 20px;
-    border-radius: 20px;
-    background: #222;
+    position: relative;
+
+    margin: 25px 0;
+
+    padding: 45px 25px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.09),
+            rgba(255,255,255,0.03)
+        );
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(10px);
 }
+
+
+/* ===============================
+   NUMÉRO DE RÉFÉRENCE
+   =============================== */
 
 #reference-title {
-    font-size: 35px;
+    margin: 0 0 20px;
+
+    font-size: clamp(28px, 6vw, 42px);
+
+    font-weight: 800;
+
+    color: white;
 }
 
+
+/* ===============================
+   POINTS
+   =============================== */
+
 #points {
+    margin: 0 0 35px;
+
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 900;
+
+    color: #ffb13b;
+
+    letter-spacing: 2px;
 }
+
+
+/* ===============================
+   BOUTONS
+   =============================== */
 
 button {
     border: none;
-    border-radius: 12px;
-    padding: 18px 30px;
-    font-size: 18px;
-    font-weight: bold;
+
+    border-radius: 16px;
+
+    padding: 17px 25px;
+
+    margin: 8px;
+
+    font-size: 16px;
+    font-weight: 800;
+
     cursor: pointer;
+
+    color: #111;
+
+    background: linear-gradient(
+        135deg,
+        #ffc15c,
+        #ff8c1a
+    );
+
+    box-shadow:
+        0 8px 25px rgba(255,140,26,0.25);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        filter 0.15s ease;
+}
+
+
+/* Effet quand on passe la souris */
+
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(255,140,26,0.4);
+
+    filter: brightness(1.08);
+}
+
+
+/* Effet quand on clique */
+
+button:active {
+    transform: translateY(1px);
+}
+
+
+/* ===============================
+   BOUTON RÉPONSE
+   =============================== */
+
+#answer-button {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #d9d9d9
+    );
+
+    color: #111;
+
+    box-shadow:
+        0 8px 25px rgba(255,255,255,0.12);
+}
+
+
+/* ===============================
+   RÉPONSE
+   =============================== */
+
+#answer {
+    margin: 30px auto 0;
+
+    max-width: 520px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: rgba(255,177,59,0.10);
+
+    border: 1px solid rgba(255,177,59,0.35);
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    animation: answerAppear 0.35s ease;
+}
+
+
+/* ===============================
+   ANIMATION RÉPONSE
+   =============================== */
+
+@keyframes answerAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* ===============================
+   ÉCRAN DE FIN
+   =============================== */
+
+.game h2 {
+    color: #ffb13b;
+}
+
+
+/* ===============================
+   MOBILE
+   =============================== */
+
+@media (max-width: 600px) {
+
+    .game {
+        width: 94%;
+        padding: 20px 10px;
+    }
+
+    .reference {
+        padding: 35px 18px;
+        border-radius: 22px;
+    }
+
+    button {
+        width: 100%;
+        margin: 7px 0;
+    }
+
 }
