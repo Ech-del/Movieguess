@@ -5,51 +5,104 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Movie Guess 🎬</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
+
 
 <body>
 
     <main class="game">
 
-        <!-- TITRE -->
+
+        <!-- ===============================
+             TITRE
+             =============================== -->
 
         <h1>🎬 MOVIE GUESS</h1>
 
 
-        <!-- CATÉGORIE -->
+        <!-- ===============================
+             CATÉGORIE
+             =============================== -->
 
         <h2 id="category-title">
             Catégorie
         </h2>
 
 
-        <!-- COMPTEUR -->
+        <!-- ===============================
+             COMPTEUR
+             =============================== -->
 
         <p id="counter">
             Référence 1 / 8
         </p>
 
 
-        <!-- CARTE DE JEU -->
+        <!-- ===============================
+             CARTE DE JEU
+             =============================== -->
 
         <div class="reference">
+
+
+            <div class="reference-number">
+                RÉFÉRENCE
+            </div>
+
 
             <h2 id="reference-title">
                 Référence 1
             </h2>
+
 
             <p id="points">
                 1 POINT
             </p>
 
 
-            <!-- BOUTON POUR AFFICHER LA RÉPONSE -->
+            <!-- ===============================
+                 LECTEUR AUDIO
+                 =============================== -->
+
+            <div class="audio-zone">
+
+                <div class="audio-label">
+                    🎧 EXTRAIT AUDIO
+                </div>
+
+
+                <button
+                    id="play-button"
+                    onclick="toggleAudio()"
+                >
+                    ▶️ LANCER L'EXTRAIT
+                </button>
+
+
+                <audio
+                    id="audio-player"
+                    preload="metadata"
+                >
+                </audio>
+
+            </div>
+
+
+            <!-- ===============================
+                 RÉPONSE
+                 =============================== -->
 
             <button
                 id="answer-button"
@@ -59,26 +112,29 @@
             </button>
 
 
-            <!-- RÉPONSE CACHÉE -->
-
             <p
                 id="answer"
                 style="display: none;"
             ></p>
 
+
         </div>
 
 
-        <!-- BOUTON SUIVANT -->
+        <!-- ===============================
+             RÉFÉRENCE SUIVANTE
+             =============================== -->
 
-        <button onclick="nextReference()">
+        <button
+            class="next-button"
+            onclick="nextReference()"
+        >
             RÉFÉRENCE SUIVANTE →
         </button>
 
+
     </main>
 
-
-    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
