@@ -1,261 +1,479 @@
-/* ===============================
-   MOVIE GUESS — STYLE
-   =============================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+
+/* =====================================================
+   MOVIE GUESS — CINEMATIC EDITION
+   ===================================================== */
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
 }
 
 body {
     margin: 0;
     min-height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: white;
 
     background:
-        radial-gradient(circle at top, #2b1608 0%, #120b07 35%, #050505 75%);
+        radial-gradient(
+            circle at 50% -20%,
+            rgba(255, 145, 30, 0.22),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 0% 100%,
+            rgba(255, 80, 0, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #050505 0%,
+            #0b0806 45%,
+            #020202 100%
+        );
 
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-
-    text-align: center;
+    overflow-x: hidden;
 }
 
 
-/* ===============================
-   CONTENEUR PRINCIPAL
-   =============================== */
+/* =====================================================
+   LUMIÈRE CINÉMA
+   ===================================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 700px;
+    height: 700px;
+
+    top: -450px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 174, 66, 0.18),
+        transparent 65%
+    );
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   PETITES PARTICULES
+   ===================================================== */
+
+body::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.25;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px);
+
+    background-size: 90px 90px;
+}
+
+
+/* =====================================================
+   CONTENEUR
+   ===================================================== */
 
 .game {
-    width: 92%;
-    max-width: 650px;
+    position: relative;
 
-    padding: 30px 20px;
+    width: min(92%, 850px);
+
+    margin: auto;
+
+    padding: 55px 20px 70px;
+
+    text-align: center;
+
+    z-index: 1;
 }
 
 
-/* ===============================
+/* =====================================================
    TITRE
-   =============================== */
+   ===================================================== */
 
 h1 {
     margin: 0;
 
-    font-size: clamp(38px, 8vw, 64px);
-    font-weight: 900;
-    letter-spacing: 4px;
+    font-size: clamp(48px, 9vw, 86px);
 
-    color: #ffb13b;
+    font-weight: 900;
+
+    letter-spacing: 7px;
+
+    line-height: 1;
+
+    background: linear-gradient(
+        180deg,
+        #fff7df 0%,
+        #ffc45c 35%,
+        #ff8c19 70%,
+        #d95800 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
 
     text-shadow:
-        0 0 10px rgba(255, 177, 59, 0.35),
-        0 0 30px rgba(255, 120, 20, 0.15);
+        0 0 20px rgba(255, 150, 40, 0.25),
+        0 0 60px rgba(255, 100, 0, 0.12);
+
+    animation: titleAppear 0.8s ease-out;
 }
 
 
-/* ===============================
-   CATÉGORIE
-   =============================== */
+/* =====================================================
+   SOUS-TITRE CATÉGORIE
+   ===================================================== */
 
 #category-title {
-    margin: 12px 0 5px;
+    margin: 22px 0 8px;
 
-    font-size: clamp(20px, 4vw, 30px);
+    font-size: clamp(21px, 4vw, 32px);
+
     font-weight: 700;
 
     color: #ffffff;
+
+    text-shadow:
+        0 2px 15px rgba(0,0,0,0.7);
+
+    animation: fadeUp 0.7s ease-out;
 }
 
 
-/* ===============================
+/* =====================================================
    COMPTEUR
-   =============================== */
+   ===================================================== */
 
 #counter {
-    margin: 8px 0 25px;
+    display: inline-block;
 
-    font-size: 17px;
-    font-weight: bold;
+    margin: 5px 0 35px;
 
-    color: #aaa;
+    padding: 9px 18px;
 
-    letter-spacing: 2px;
-}
+    border-radius: 100px;
 
+    background: rgba(255,255,255,0.06);
 
-/* ===============================
-   CARTE DE RÉFÉRENCE
-   =============================== */
+    border: 1px solid rgba(255,255,255,0.10);
 
-.reference {
-    position: relative;
+    color: #a9a9a9;
 
-    margin: 25px 0;
+    font-size: 13px;
 
-    padding: 45px 25px;
+    font-weight: 700;
 
-    border-radius: 28px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.09),
-            rgba(255,255,255,0.03)
-        );
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,0.45),
-        inset 0 1px 0 rgba(255,255,255,0.08);
+    letter-spacing: 3px;
 
     backdrop-filter: blur(10px);
 }
 
 
-/* ===============================
-   NUMÉRO DE RÉFÉRENCE
-   =============================== */
+/* =====================================================
+   CARTE PRINCIPALE
+   ===================================================== */
+
+.reference {
+    position: relative;
+
+    margin: 0 auto 28px;
+
+    padding: 65px 35px;
+
+    min-height: 310px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.105),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.13);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.65),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(18px);
+
+    overflow: hidden;
+
+    animation: cardAppear 0.7s ease-out;
+}
+
+
+/* lumière dans la carte */
+
+.reference::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -180px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(255,170,60,0.20),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+
+/* ligne lumineuse */
+
+.reference::after {
+    content: "";
+
+    position: absolute;
+
+    left: 10%;
+    right: 10%;
+    top: 0;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,180,70,0.8),
+        transparent
+    );
+
+    box-shadow:
+        0 0 15px rgba(255,150,40,0.6);
+}
+
+
+/* =====================================================
+   TITRE DE LA RÉFÉRENCE
+   ===================================================== */
 
 #reference-title {
-    margin: 0 0 20px;
+    position: relative;
 
-    font-size: clamp(28px, 6vw, 42px);
+    margin: 0 0 25px;
 
-    font-weight: 800;
+    font-size: clamp(32px, 6vw, 55px);
 
-    color: white;
-}
-
-
-/* ===============================
-   POINTS
-   =============================== */
-
-#points {
-    margin: 0 0 35px;
-
-    font-size: 25px;
     font-weight: 900;
 
-    color: #ffb13b;
+    letter-spacing: 1px;
 
-    letter-spacing: 2px;
+    color: white;
+
+    text-shadow:
+        0 5px 30px rgba(0,0,0,0.6);
+
+    z-index: 1;
 }
 
 
-/* ===============================
+/* =====================================================
+   POINTS
+   ===================================================== */
+
+#points {
+    position: relative;
+
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    color: #ffb43b;
+
+    text-shadow:
+        0 0 20px rgba(255,170,50,0.35);
+
+    z-index: 1;
+}
+
+
+/* =====================================================
    BOUTONS
-   =============================== */
+   ===================================================== */
 
 button {
+    position: relative;
+
     border: none;
 
-    border-radius: 16px;
+    border-radius: 15px;
 
-    padding: 17px 25px;
+    padding: 17px 28px;
 
     margin: 8px;
 
-    font-size: 16px;
+    min-width: 220px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
     font-weight: 800;
+
+    letter-spacing: 1px;
 
     cursor: pointer;
 
-    color: #111;
+    color: #15100b;
 
-    background: linear-gradient(
-        135deg,
-        #ffc15c,
-        #ff8c1a
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ffe09a,
+            #ffb52e 45%,
+            #ff7b00
+        );
 
     box-shadow:
-        0 8px 25px rgba(255,140,26,0.25);
+        0 10px 30px rgba(255,120,10,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.5);
 
     transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease,
-        filter 0.15s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
 }
 
-
-/* Effet quand on passe la souris */
 
 button:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 30px rgba(255,140,26,0.4);
+    transform: translateY(-4px) scale(1.02);
 
     filter: brightness(1.08);
+
+    box-shadow:
+        0 16px 40px rgba(255,120,10,0.35),
+        0 0 25px rgba(255,150,30,0.15);
 }
 
-
-/* Effet quand on clique */
 
 button:active {
-    transform: translateY(1px);
+    transform: translateY(1px) scale(0.99);
 }
 
 
-/* ===============================
+/* =====================================================
    BOUTON RÉPONSE
-   =============================== */
+   ===================================================== */
 
 #answer-button {
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #d9d9d9
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #e6e6e6
+        );
 
     color: #111;
 
     box-shadow:
-        0 8px 25px rgba(255,255,255,0.12);
+        0 10px 30px rgba(255,255,255,0.08);
 }
 
 
-/* ===============================
+#answer-button:hover {
+    box-shadow:
+        0 15px 35px rgba(255,255,255,0.18);
+}
+
+
+/* =====================================================
    RÉPONSE
-   =============================== */
+   ===================================================== */
 
 #answer {
+    position: relative;
+
+    width: min(100%, 650px);
+
     margin: 30px auto 0;
 
-    max-width: 520px;
+    padding: 25px 30px;
 
-    padding: 25px;
+    border-radius: 20px;
 
-    border-radius: 18px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,174,59,0.15),
+            rgba(255,120,20,0.05)
+        );
 
-    background: rgba(255,177,59,0.10);
+    border: 1px solid rgba(255,174,59,0.35);
 
-    border: 1px solid rgba(255,177,59,0.35);
+    color: #fff;
 
-    color: white;
+    font-size: 19px;
 
-    font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
 
-    line-height: 1.5;
+    line-height: 1.6;
 
-    animation: answerAppear 0.35s ease;
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.25);
+
+    animation:
+        answerAppear 0.45s cubic-bezier(.2,.8,.2,1);
 }
 
 
-/* ===============================
-   ANIMATION RÉPONSE
-   =============================== */
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
 
-@keyframes answerAppear {
+@keyframes titleAppear {
 
     from {
         opacity: 0;
-        transform: translateY(15px) scale(0.97);
+        transform: translateY(-25px) scale(0.95);
     }
 
     to {
@@ -266,34 +484,105 @@ button:active {
 }
 
 
-/* ===============================
-   ÉCRAN DE FIN
-   =============================== */
+@keyframes cardAppear {
 
-.game h2 {
-    color: #ffb13b;
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
 }
 
 
-/* ===============================
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes answerAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =====================================================
+   ÉCRAN DE FIN
+   ===================================================== */
+
+.game h2 {
+    color: #ffb43b;
+}
+
+
+/* =====================================================
    MOBILE
-   =============================== */
+   ===================================================== */
 
 @media (max-width: 600px) {
 
     .game {
         width: 94%;
-        padding: 20px 10px;
+
+        padding:
+            40px
+            10px
+            50px;
+    }
+
+    h1 {
+        letter-spacing: 4px;
     }
 
     .reference {
-        padding: 35px 18px;
-        border-radius: 22px;
+        min-height: 280px;
+
+        padding:
+            45px
+            18px;
+
+        border-radius: 25px;
+    }
+
+    #reference-title {
+        font-size: 34px;
+    }
+
+    #points {
+        font-size: 24px;
     }
 
     button {
         width: 100%;
-        margin: 7px 0;
+
+        margin:
+            6px
+            0;
+
+        padding: 18px 15px;
     }
 
 }
