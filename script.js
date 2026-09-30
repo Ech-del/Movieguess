@@ -146,7 +146,7 @@ categories.pirates.references = [
         titre: "Référence 2",
 
         reponse:
-            "Jack Sparrow et Elizabeth Swann sont capturés par les Pelegostos.",
+            "Jack Sparrow est capturé par les Pelegostos, qui le considèrent comme un dieu.",
 
         audio:
             "pirates2.mp3"
