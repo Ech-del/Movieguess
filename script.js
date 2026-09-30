@@ -509,4 +509,3 @@ function nextReference() {
     }
 
 }
-```
