@@ -2,7 +2,7 @@
 
 
 /* =====================================================
-   MOVIE GUESS — CINEMATIC EDITION
+   BASE
    ===================================================== */
 
 * {
@@ -14,23 +14,29 @@ html {
 }
 
 body {
+
     margin: 0;
+
     min-height: 100vh;
 
     font-family: "Montserrat", Arial, sans-serif;
+
     color: white;
 
     background:
+
         radial-gradient(
             circle at 50% -20%,
-            rgba(255, 145, 30, 0.22),
+            rgba(255,145,30,0.22),
             transparent 45%
         ),
+
         radial-gradient(
             circle at 0% 100%,
-            rgba(255, 80, 0, 0.10),
+            rgba(255,80,0,0.10),
             transparent 35%
         ),
+
         linear-gradient(
             135deg,
             #050505 0%,
@@ -43,10 +49,11 @@ body {
 
 
 /* =====================================================
-   LUMIÈRE CINÉMA
+   LUMIÈRE
    ===================================================== */
 
 body::before {
+
     content: "";
 
     position: fixed;
@@ -59,32 +66,39 @@ body::before {
 
     transform: translateX(-50%);
 
-    background: radial-gradient(
-        circle,
-        rgba(255, 174, 66, 0.18),
-        transparent 65%
-    );
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,174,66,0.18),
+            transparent 65%
+        );
 
     pointer-events: none;
 }
 
 
 /* =====================================================
-   PETITES PARTICULES
+   PARTICULES
    ===================================================== */
 
 body::after {
+
     content: "";
 
     position: fixed;
+
     inset: 0;
 
     pointer-events: none;
 
-    opacity: 0.25;
+    opacity: 0.20;
 
     background-image:
-        radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px);
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.35) 1px,
+            transparent 1px
+        );
 
     background-size: 90px 90px;
 }
@@ -95,6 +109,7 @@ body::after {
    ===================================================== */
 
 .game {
+
     position: relative;
 
     width: min(92%, 850px);
@@ -114,6 +129,7 @@ body::after {
    ===================================================== */
 
 h1 {
+
     margin: 0;
 
     font-size: clamp(48px, 9vw, 86px);
@@ -124,13 +140,15 @@ h1 {
 
     line-height: 1;
 
-    background: linear-gradient(
-        180deg,
-        #fff7df 0%,
-        #ffc45c 35%,
-        #ff8c19 70%,
-        #d95800 100%
-    );
+    background:
+
+        linear-gradient(
+            180deg,
+            #fff7df 0%,
+            #ffc45c 35%,
+            #ff8c19 70%,
+            #d95800 100%
+        );
 
     -webkit-background-clip: text;
     background-clip: text;
@@ -138,30 +156,32 @@ h1 {
     color: transparent;
 
     text-shadow:
-        0 0 20px rgba(255, 150, 40, 0.25),
-        0 0 60px rgba(255, 100, 0, 0.12);
 
-    animation: titleAppear 0.8s ease-out;
+        0 0 20px rgba(255,150,40,0.25),
+
+        0 0 60px rgba(255,100,0,0.12);
+
+    animation:
+        titleAppear 0.8s ease-out;
 }
 
 
 /* =====================================================
-   SOUS-TITRE CATÉGORIE
+   CATÉGORIE
    ===================================================== */
 
 #category-title {
+
     margin: 22px 0 8px;
 
     font-size: clamp(21px, 4vw, 32px);
 
     font-weight: 700;
 
-    color: #ffffff;
+    color: white;
 
     text-shadow:
         0 2px 15px rgba(0,0,0,0.7);
-
-    animation: fadeUp 0.7s ease-out;
 }
 
 
@@ -170,6 +190,7 @@ h1 {
    ===================================================== */
 
 #counter {
+
     display: inline-block;
 
     margin: 5px 0 35px;
@@ -178,11 +199,13 @@ h1 {
 
     border-radius: 100px;
 
-    background: rgba(255,255,255,0.06);
+    background:
+        rgba(255,255,255,0.06);
 
-    border: 1px solid rgba(255,255,255,0.10);
+    border:
+        1px solid rgba(255,255,255,0.10);
 
-    color: #a9a9a9;
+    color: #aaa;
 
     font-size: 13px;
 
@@ -195,17 +218,18 @@ h1 {
 
 
 /* =====================================================
-   CARTE PRINCIPALE
+   CARTE
    ===================================================== */
 
 .reference {
+
     position: relative;
 
     margin: 0 auto 28px;
 
-    padding: 65px 35px;
+    padding: 50px 35px 45px;
 
-    min-height: 310px;
+    min-height: 420px;
 
     display: flex;
 
@@ -218,29 +242,33 @@ h1 {
     border-radius: 32px;
 
     background:
+
         linear-gradient(
             145deg,
             rgba(255,255,255,0.105),
             rgba(255,255,255,0.025)
         );
 
-    border: 1px solid rgba(255,255,255,0.13);
+    border:
+        1px solid rgba(255,255,255,0.13);
 
     box-shadow:
+
         0 30px 80px rgba(0,0,0,0.65),
+
         inset 0 1px 0 rgba(255,255,255,0.12);
 
     backdrop-filter: blur(18px);
 
     overflow: hidden;
 
-    animation: cardAppear 0.7s ease-out;
+    animation:
+        cardAppear 0.7s ease-out;
 }
 
 
-/* lumière dans la carte */
-
 .reference::before {
+
     content: "";
 
     position: absolute;
@@ -253,35 +281,39 @@ h1 {
 
     transform: translateX(-50%);
 
-    background: radial-gradient(
-        circle,
-        rgba(255,170,60,0.20),
-        transparent 70%
-    );
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,170,60,0.20),
+            transparent 70%
+        );
 
     pointer-events: none;
 }
 
 
-/* ligne lumineuse */
-
 .reference::after {
+
     content: "";
 
     position: absolute;
 
     left: 10%;
     right: 10%;
+
     top: 0;
 
     height: 1px;
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,180,70,0.8),
-        transparent
-    );
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,180,70,0.8),
+            transparent
+        );
 
     box-shadow:
         0 0 15px rgba(255,150,40,0.6);
@@ -289,24 +321,42 @@ h1 {
 
 
 /* =====================================================
-   TITRE DE LA RÉFÉRENCE
+   PETIT TITRE
+   ===================================================== */
+
+.reference-number {
+
+    position: relative;
+
+    margin-bottom: 10px;
+
+    color: #888;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   RÉFÉRENCE
    ===================================================== */
 
 #reference-title {
+
     position: relative;
 
-    margin: 0 0 25px;
+    margin: 0 0 20px;
 
     font-size: clamp(32px, 6vw, 55px);
 
     font-weight: 900;
 
-    letter-spacing: 1px;
-
     color: white;
-
-    text-shadow:
-        0 5px 30px rgba(0,0,0,0.6);
 
     z-index: 1;
 }
@@ -317,9 +367,10 @@ h1 {
    ===================================================== */
 
 #points {
+
     position: relative;
 
-    margin: 0;
+    margin: 0 0 30px;
 
     font-size: 28px;
 
@@ -337,10 +388,55 @@ h1 {
 
 
 /* =====================================================
+   ZONE AUDIO
+   ===================================================== */
+
+.audio-zone {
+
+    position: relative;
+
+    width: min(100%, 500px);
+
+    margin: 5px auto 25px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0,0,0,0.25);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   LABEL AUDIO
+   ===================================================== */
+
+.audio-label {
+
+    margin-bottom: 10px;
+
+    color: #999;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+/* =====================================================
    BOUTONS
    ===================================================== */
 
 button {
+
     position: relative;
 
     border: none;
@@ -366,6 +462,7 @@ button {
     color: #15100b;
 
     background:
+
         linear-gradient(
             135deg,
             #ffe09a,
@@ -374,29 +471,63 @@ button {
         );
 
     box-shadow:
+
         0 10px 30px rgba(255,120,10,0.22),
+
         inset 0 1px 0 rgba(255,255,255,0.5);
 
     transition:
+
         transform 0.2s ease,
+
         box-shadow 0.2s ease,
+
         filter 0.2s ease;
 }
 
 
 button:hover {
-    transform: translateY(-4px) scale(1.02);
 
-    filter: brightness(1.08);
+    transform:
+        translateY(-4px)
+        scale(1.02);
+
+    filter:
+        brightness(1.08);
 
     box-shadow:
+
         0 16px 40px rgba(255,120,10,0.35),
+
         0 0 25px rgba(255,150,30,0.15);
 }
 
 
 button:active {
-    transform: translateY(1px) scale(0.99);
+
+    transform:
+        translateY(1px)
+        scale(0.99);
+}
+
+
+/* =====================================================
+   BOUTON AUDIO
+   ===================================================== */
+
+#play-button {
+
+    margin: 0;
+
+    min-width: 250px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffcf63,
+            #ff8c18
+        );
 }
 
 
@@ -405,7 +536,9 @@ button:active {
    ===================================================== */
 
 #answer-button {
+
     background:
+
         linear-gradient(
             135deg,
             #ffffff,
@@ -415,13 +548,8 @@ button:active {
     color: #111;
 
     box-shadow:
+
         0 10px 30px rgba(255,255,255,0.08);
-}
-
-
-#answer-button:hover {
-    box-shadow:
-        0 15px 35px rgba(255,255,255,0.18);
 }
 
 
@@ -430,26 +558,29 @@ button:active {
    ===================================================== */
 
 #answer {
+
     position: relative;
 
     width: min(100%, 650px);
 
-    margin: 30px auto 0;
+    margin: 25px auto 0;
 
     padding: 25px 30px;
 
     border-radius: 20px;
 
     background:
+
         linear-gradient(
             135deg,
             rgba(255,174,59,0.15),
             rgba(255,120,20,0.05)
         );
 
-    border: 1px solid rgba(255,174,59,0.35);
+    border:
+        1px solid rgba(255,174,59,0.35);
 
-    color: #fff;
+    color: white;
 
     font-size: 19px;
 
@@ -461,7 +592,27 @@ button:active {
         0 15px 40px rgba(0,0,0,0.25);
 
     animation:
-        answerAppear 0.45s cubic-bezier(.2,.8,.2,1);
+        answerAppear 0.45s ease;
+}
+
+
+/* =====================================================
+   BOUTON SUIVANT
+   ===================================================== */
+
+.next-button {
+
+    margin-top: 5px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f2f2f2,
+            #bdbdbd
+        );
+
+    color: #111;
 }
 
 
@@ -472,69 +623,66 @@ button:active {
 @keyframes titleAppear {
 
     from {
+
         opacity: 0;
-        transform: translateY(-25px) scale(0.95);
+
+        transform:
+            translateY(-25px)
+            scale(0.95);
     }
 
     to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
 
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
 }
 
 
 @keyframes cardAppear {
 
     from {
+
         opacity: 0;
-        transform: translateY(25px) scale(0.97);
+
+        transform:
+            translateY(25px)
+            scale(0.97);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
-
-}
-
-
-@keyframes fadeUp {
-
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
 }
 
 
 @keyframes answerAppear {
 
     from {
+
         opacity: 0;
-        transform: translateY(15px) scale(0.96);
+
+        transform:
+            translateY(15px)
+            scale(0.96);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
-
-}
-
-
-/* =====================================================
-   ÉCRAN DE FIN
-   ===================================================== */
-
-.game h2 {
-    color: #ffb43b;
 }
 
 
@@ -545,6 +693,7 @@ button:active {
 @media (max-width: 600px) {
 
     .game {
+
         width: 94%;
 
         padding:
@@ -554,35 +703,44 @@ button:active {
     }
 
     h1 {
+
         letter-spacing: 4px;
     }
 
     .reference {
-        min-height: 280px;
+
+        min-height: 430px;
 
         padding:
-            45px
+            40px
             18px;
-
-        border-radius: 25px;
     }
 
     #reference-title {
+
         font-size: 34px;
     }
 
     #points {
+
         font-size: 24px;
     }
 
     button {
+
         width: 100%;
 
         margin:
             6px
             0;
 
-        padding: 18px 15px;
+        padding:
+            18px
+            15px;
     }
 
+    #play-button {
+
+        width: 100%;
+    }
 }
