@@ -1,14 +1,18 @@
-// ===============================
+// =====================================================
 // RÉCUPÉRATION DE LA CATÉGORIE
-// ===============================
+// =====================================================
 
 const params = new URLSearchParams(window.location.search);
-const category = (params.get("cat") || "").trim().toLowerCase();
+
+const category =
+    (params.get("cat") || "")
+        .trim()
+        .toLowerCase();
 
 
-// ===============================
+// =====================================================
 // LES 20 CATÉGORIES
-// ===============================
+// =====================================================
 
 const categories = {
 
@@ -95,9 +99,9 @@ const categories = {
 };
 
 
-// ===============================
-// CRÉATION DES RÉFÉRENCES
-// ===============================
+// =====================================================
+// CRÉATION DES 8 RÉFÉRENCES
+// =====================================================
 
 for (const key in categories) {
 
@@ -106,162 +110,349 @@ for (const key in categories) {
     for (let i = 1; i <= 8; i++) {
 
         categories[key].references.push({
-            titre: "Référence " + i,
-            reponse: "Réponse à définir"
+
+            titre:
+                "Référence " + i +
+                " — " +
+                i +
+                (i === 1 ? " POINT" : " POINTS"),
+
+            reponse:
+                "Réponse à définir",
+
+            audio:
+                ""
+
         });
 
     }
+
 }
 
 
-// ===============================
+// =====================================================
 // PIRATES DES CARAÏBES
-// ===============================
+// =====================================================
 
 categories.pirates.references = [
 
     {
         titre: "Référence 1 — 1 POINT",
-        reponse: "Jack Sparrow s'échappe de Port Royal avec le Black Pearl."
+
+        reponse:
+            "Jack Sparrow s'échappe de Port Royal avec le Black Pearl.",
+
+        audio:
+            "audio/pirates1.mp3"
     },
 
     {
         titre: "Référence 2 — 2 POINTS",
-        reponse: "Jack Sparrow et Elizabeth Swann sont capturés sur l'île des Pelegostos."
+
+        reponse:
+            "Jack Sparrow et Elizabeth Swann sont capturés sur l'île des Pelegostos.",
+
+        audio:
+            "audio/pirates2.mp3"
     },
 
     {
         titre: "Référence 3 — 3 POINTS",
-        reponse: "Jack Sparrow cherche la clé du coffre de Davy Jones."
+
+        reponse:
+            "Jack Sparrow cherche la clé du coffre de Davy Jones.",
+
+        audio:
+            "audio/pirates3.mp3"
     },
 
     {
         titre: "Référence 4 — 4 POINTS",
-        reponse: "Jack Sparrow se retrouve dans l'antre de Davy Jones avec plusieurs versions de lui-même."
+
+        reponse:
+            "Jack Sparrow se retrouve dans l'antre de Davy Jones avec plusieurs versions de lui-même.",
+
+        audio:
+            "audio/pirates4.mp3"
     },
 
     {
         titre: "Référence 5 — 5 POINTS",
-        reponse: "Barbossa boit du rhum alors qu'il est sous la malédiction."
+
+        reponse:
+            "Barbossa boit du rhum alors qu'il est sous la malédiction.",
+
+        audio:
+            "audio/pirates5.mp3"
     },
 
     {
         titre: "Référence 6 — 6 POINTS",
-        reponse: "Davy Jones demande à Jack Sparrow s'il a peur de la mort."
+
+        reponse:
+            "Davy Jones demande à Jack Sparrow s'il a peur de la mort.",
+
+        audio:
+            "audio/pirates6.mp3"
     },
 
     {
         titre: "Référence 7 — 7 POINTS",
-        reponse: "Jack Sparrow doit choisir son mode d'exécution."
+
+        reponse:
+            "Jack Sparrow doit choisir son mode d'exécution.",
+
+        audio:
+            "audio/pirates7.mp3"
     },
 
     {
         titre: "Référence 8 — 8 POINTS",
-        reponse: "Will Turner et James Norrington se battent sur la roue géante pendant que Jack poursuit le coffre."
+
+        reponse:
+            "Will Turner et James Norrington se battent sur la roue géante pendant que Jack poursuit le coffre.",
+
+        audio:
+            "audio/pirates8.mp3"
     }
 
 ];
 
 
-// ===============================
+// =====================================================
 // VÉRIFICATION DE LA CATÉGORIE
-// ===============================
+// =====================================================
 
 if (!categories[category]) {
 
     document.querySelector(".game").innerHTML = `
-        <h1>🎬 MOVIE GUESS</h1>
-        <p>Catégorie inconnue.</p>
-        <p>Utilise un QR code valide.</p>
-    `;
 
+        <h1>🎬 MOVIE GUESS</h1>
+
+        <p>Catégorie inconnue.</p>
+
+        <p>Utilise un QR code valide.</p>
+
+    `;
 }
 
 
-// ===============================
+// =====================================================
 // VARIABLES
-// ===============================
+// =====================================================
 
 let currentReference = 1;
 
 
-// ===============================
+// =====================================================
+// ÉLÉMENTS AUDIO
+// =====================================================
+
+const audioPlayer =
+    document.getElementById("audio-player");
+
+const playButton =
+    document.getElementById("play-button");
+
+
+// =====================================================
 // AFFICHAGE INITIAL
-// ===============================
+// =====================================================
 
 if (categories[category]) {
 
-    const currentCategory = categories[category];
-    const reference = currentCategory.references[0];
+    const currentCategory =
+        categories[category];
+
+    const reference =
+        currentCategory.references[0];
+
 
     document.getElementById("category-title").textContent =
         currentCategory.name;
 
+
     document.getElementById("reference-title").textContent =
         reference.titre;
+
 
     document.getElementById("counter").textContent =
         "Référence 1 / 8";
 
+
     document.getElementById("points").textContent =
         "1 POINT";
+
+
+    loadAudio(reference);
 
 }
 
 
-// ===============================
+// =====================================================
+// CHARGER UN AUDIO
+// =====================================================
+
+function loadAudio(reference) {
+
+    audioPlayer.pause();
+
+    audioPlayer.currentTime = 0;
+
+    audioPlayer.removeAttribute("src");
+
+    audioPlayer.load();
+
+
+    playButton.textContent =
+        "▶️ LANCER L'EXTRAIT";
+
+
+    if (reference.audio) {
+
+        audioPlayer.src =
+            reference.audio;
+
+    }
+
+}
+
+
+// =====================================================
+// LANCER / ARRÊTER L'AUDIO
+// =====================================================
+
+function toggleAudio() {
+
+    if (!audioPlayer.src) {
+
+        alert(
+            "Aucun extrait audio n'est encore associé à cette référence."
+        );
+
+        return;
+    }
+
+
+    if (audioPlayer.paused) {
+
+        audioPlayer.play();
+
+        playButton.textContent =
+            "⏸️ METTRE EN PAUSE";
+
+    }
+
+    else {
+
+        audioPlayer.pause();
+
+        playButton.textContent =
+            "▶️ REPRENDRE L'EXTRAIT";
+
+    }
+
+}
+
+
+// =====================================================
+// QUAND L'AUDIO EST TERMINÉ
+// =====================================================
+
+audioPlayer.addEventListener(
+    "ended",
+    function () {
+
+        playButton.textContent =
+            "▶️ REJOUER L'EXTRAIT";
+
+    }
+);
+
+
+// =====================================================
 // AFFICHER LA RÉPONSE
-// ===============================
+// =====================================================
 
 function showAnswer() {
 
-    const currentCategory = categories[category];
+    const currentCategory =
+        categories[category];
+
 
     const reference =
-        currentCategory.references[currentReference - 1];
+        currentCategory.references[
+            currentReference - 1
+        ];
+
 
     document.getElementById("answer").textContent =
         reference.reponse;
 
+
     document.getElementById("answer").style.display =
         "block";
 
+
     document.getElementById("answer-button").style.display =
         "none";
+
 }
 
 
-// ===============================
+// =====================================================
 // RÉFÉRENCE SUIVANTE
-// ===============================
+// =====================================================
 
 function nextReference() {
 
-    const currentCategory = categories[category];
+    const currentCategory =
+        categories[category];
+
+
+    // ARRÊTER L'AUDIO AVANT DE CHANGER
+
+    audioPlayer.pause();
+
+    audioPlayer.currentTime = 0;
+
 
     currentReference++;
+
 
     if (currentReference <= 8) {
 
         const reference =
-            currentCategory.references[currentReference - 1];
+            currentCategory.references[
+                currentReference - 1
+            ];
+
 
         document.getElementById("counter").textContent =
-            "Référence " + currentReference + " / 8";
+            "Référence " +
+            currentReference +
+            " / 8";
+
 
         document.getElementById("reference-title").textContent =
             reference.titre;
+
 
         document.getElementById("points").textContent =
             currentReference +
             " POINT" +
             (currentReference > 1 ? "S" : "");
 
+
         document.getElementById("answer").style.display =
             "none";
 
+
         document.getElementById("answer-button").style.display =
             "inline-block";
+
+
+        loadAudio(reference);
 
     }
 
@@ -273,12 +464,16 @@ function nextReference() {
 
             <h2>${currentCategory.name}</h2>
 
-            <p>Les 8 références sont terminées.</p>
+            <p>
+                Les 8 références sont terminées.
+            </p>
 
             <button onclick="location.reload()">
-                RECOMMENCER
+                🔄 RECOMMENCER
             </button>
 
         `;
+
     }
+
 }
