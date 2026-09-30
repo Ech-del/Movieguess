@@ -20,6 +20,11 @@ h1 {
     margin-bottom: 10px;
 }
 
+#category-title {
+    font-size: 28px;
+    margin-top: 5px;
+}
+
 #counter {
     font-size: 20px;
     opacity: 0.7;
