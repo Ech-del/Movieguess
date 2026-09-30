@@ -1,13 +1,15 @@
 // =====================================================
+// MOVIE GUESS — SCRIPT COMPLET
+// =====================================================
+
+
+// =====================================================
 // RÉCUPÉRATION DE LA CATÉGORIE
 // =====================================================
 
 const params = new URLSearchParams(window.location.search);
 
-const category =
-    (params.get("cat") || "")
-        .trim()
-        .toLowerCase();
+const category = (params.get("cat") || "").trim().toLowerCase();
 
 
 // =====================================================
@@ -16,51 +18,91 @@ const category =
 
 const categories = {
 
-    vo: { name: "🎙️ VO" },
+    vo: {
+        name: "🎙️ VO"
+    },
 
-    pirates: { name: "🏴‍☠️ Pirates des Caraïbes" },
+    pirates: {
+        name: "🏴‍☠️ Pirates des Caraïbes"
+    },
 
-    louisdefunes: { name: "😂 Louis de Funès" },
+    louisdefunes: {
+        name: "😂 Louis de Funès"
+    },
 
-    tonystark: { name: "🤖 Tony Stark" },
+    tonystark: {
+        name: "🤖 Tony Stark"
+    },
 
-    marvel: { name: "🦸 Marvel" },
+    marvel: {
+        name: "🦸 Marvel"
+    },
 
-    starwars: { name: "⭐ Star Wars" },
+    starwars: {
+        name: "⭐ Star Wars"
+    },
 
-    tomcruise: { name: "🎬 Tom Cruise" },
+    tomcruise: {
+        name: "🎬 Tom Cruise"
+    },
 
-    christianclavier: { name: "😂 Christian Clavier" },
+    christianclavier: {
+        name: "😂 Christian Clavier"
+    },
 
-    sciencefiction: { name: "🚀 Science-fiction" },
+    sciencefiction: {
+        name: "🚀 Science-fiction"
+    },
 
-    aventure: { name: "🗺️ Aventure" },
+    aventure: {
+        name: "🗺️ Aventure"
+    },
 
-    action: { name: "💥 Action" },
+    action: {
+        name: "💥 Action"
+    },
 
-    nyc: { name: "🗽 NYC" },
+    nyc: {
+        name: "🗽 NYC"
+    },
 
-    hollywood: { name: "🎥 Hollywood" },
+    hollywood: {
+        name: "🎥 Hollywood"
+    },
 
-    comediefrancaise: { name: "🤣 Comédie française" },
+    comediefrancaise: {
+        name: "🤣 Comédie française"
+    },
 
-    musiquesfilms1: { name: "🎵 Musiques de films 1" },
+    musiquesfilms1: {
+        name: "🎵 Musiques de films 1"
+    },
 
-    musiquesfilms2: { name: "🎵 Musiques de films 2" },
+    musiquesfilms2: {
+        name: "🎵 Musiques de films 2"
+    },
 
-    disney: { name: "✨ Disney" },
+    disney: {
+        name: "✨ Disney"
+    },
 
-    pixar: { name: "🧸 Pixar" },
+    pixar: {
+        name: "🧸 Pixar"
+    },
 
-    seriesamericaines: { name: "📺 Séries américaines" },
+    seriesamericaines: {
+        name: "📺 Séries américaines"
+    },
 
-    mondesmagiques: { name: "🧙 Mondes imaginaires et magiques" }
+    mondesmagiques: {
+        name: "🧙 Mondes imaginaires et magiques"
+    }
 
 };
 
 
 // =====================================================
-// CRÉATION DES 8 RÉFÉRENCES
+// CRÉATION DES 8 RÉFÉRENCES PAR DÉFAUT
 // =====================================================
 
 for (const key in categories) {
@@ -71,17 +113,11 @@ for (const key in categories) {
 
         categories[key].references.push({
 
-            titre:
-                "Référence " + i +
-                " — " +
-                i +
-                (i === 1 ? " POINT" : " POINTS"),
+            titre: "Référence " + i,
 
-            reponse:
-                "Réponse à définir",
+            reponse: "Réponse à définir",
 
-            audio:
-                ""
+            audio: ""
 
         });
 
@@ -97,7 +133,7 @@ for (const key in categories) {
 categories.pirates.references = [
 
     {
-        titre: "Référence 1 — 1 POINT",
+        titre: "Référence 1",
 
         reponse:
             "Jack Sparrow s'échappe de Port Royal avec le Black Pearl.",
@@ -107,7 +143,7 @@ categories.pirates.references = [
     },
 
     {
-        titre: "Référence 2 — 2 POINTS",
+        titre: "Référence 2",
 
         reponse:
             "Jack Sparrow et Elizabeth Swann sont capturés par les Pelegostos.",
@@ -117,7 +153,7 @@ categories.pirates.references = [
     },
 
     {
-        titre: "Référence 3 — 3 POINTS",
+        titre: "Référence 3",
 
         reponse:
             "Jack Sparrow cherche la clé du coffre de Davy Jones.",
@@ -127,7 +163,7 @@ categories.pirates.references = [
     },
 
     {
-        titre: "Référence 4 — 4 POINTS",
+        titre: "Référence 4",
 
         reponse:
             "Jack Sparrow se retrouve dans un endroit étrange avec plusieurs versions de lui-même.",
@@ -137,7 +173,7 @@ categories.pirates.references = [
     },
 
     {
-        titre: "Référence 5 — 5 POINTS",
+        titre: "Référence 5",
 
         reponse:
             "Barbossa boit du rhum alors qu'il est sous la malédiction.",
@@ -147,7 +183,7 @@ categories.pirates.references = [
     },
 
     {
-        titre: "Référence 6 — 6 POINTS",
+        titre: "Référence 6",
 
         reponse:
             "Davy Jones demande à Jack Sparrow s'il a peur de la mort.",
@@ -157,7 +193,7 @@ categories.pirates.references = [
     },
 
     {
-        titre: "Référence 7 — 7 POINTS",
+        titre: "Référence 7",
 
         reponse:
             "Jack Sparrow doit choisir son mode d'exécution.",
@@ -167,7 +203,7 @@ categories.pirates.references = [
     },
 
     {
-        titre: "Référence 8 — 8 POINTS",
+        titre: "Référence 8",
 
         reponse:
             "Will Turner et James Norrington se battent sur la roue géante pendant que Jack poursuit le coffre.",
@@ -180,7 +216,43 @@ categories.pirates.references = [
 
 
 // =====================================================
-// VÉRIFICATION DE LA CATÉGORIE
+// VARIABLES
+// =====================================================
+
+let currentReference = 1;
+
+
+// =====================================================
+// ÉLÉMENTS HTML
+// =====================================================
+
+const categoryTitle =
+    document.getElementById("category-title");
+
+const counter =
+    document.getElementById("counter");
+
+const referenceTitle =
+    document.getElementById("reference-title");
+
+const points =
+    document.getElementById("points");
+
+const answer =
+    document.getElementById("answer");
+
+const answerButton =
+    document.getElementById("answer-button");
+
+const playButton =
+    document.getElementById("play-button");
+
+const audioPlayer =
+    document.getElementById("audio-player");
+
+
+// =====================================================
+// VÉRIFICATION
 // =====================================================
 
 if (!categories[category]) {
@@ -199,50 +271,45 @@ if (!categories[category]) {
 
 
 // =====================================================
-// VARIABLES
+// AFFICHER UNE RÉFÉRENCE
 // =====================================================
 
-let currentReference = 1;
-
-
-// =====================================================
-// ÉLÉMENTS
-// =====================================================
-
-const audioPlayer =
-    document.getElementById("audio-player");
-
-const playButton =
-    document.getElementById("play-button");
-
-
-// =====================================================
-// AFFICHAGE INITIAL
-// =====================================================
-
-if (categories[category]) {
+function displayReference() {
 
     const currentCategory =
         categories[category];
 
     const reference =
-        currentCategory.references[0];
+        currentCategory.references[currentReference - 1];
 
 
-    document.getElementById("category-title").textContent =
+    categoryTitle.textContent =
         currentCategory.name;
 
 
-    document.getElementById("reference-title").textContent =
+    counter.textContent =
+        "Référence " + currentReference + " / 8";
+
+
+    referenceTitle.textContent =
         reference.titre;
 
 
-    document.getElementById("counter").textContent =
-        "Référence 1 / 8";
+    points.textContent =
+        currentReference +
+        (currentReference === 1 ? " POINT" : " POINTS");
 
 
-    document.getElementById("points").textContent =
-        "1 POINT";
+    answer.textContent =
+        "";
+
+
+    answer.style.display =
+        "none";
+
+
+    answerButton.style.display =
+        "inline-block";
 
 
     loadAudio(reference);
@@ -256,17 +323,24 @@ if (categories[category]) {
 
 function loadAudio(reference) {
 
+    // Stopper l'ancien audio
     audioPlayer.pause();
 
     audioPlayer.currentTime = 0;
 
-    audioPlayer.src = "";
+
+    // Réinitialiser
+    audioPlayer.removeAttribute("src");
+
+    audioPlayer.load();
+
 
     playButton.textContent =
         "▶️ LANCER L'EXTRAIT";
 
 
-    if (reference.audio) {
+    // Si cette référence possède un audio
+    if (reference.audio !== "") {
 
         audioPlayer.src =
             reference.audio;
@@ -279,15 +353,16 @@ function loadAudio(reference) {
 
 
 // =====================================================
-// PLAY / PAUSE
+// LANCER / PAUSER / REPRENDRE
 // =====================================================
 
-async function toggleAudio() {
+window.toggleAudio = function () {
 
+    // Aucun fichier audio
     if (!audioPlayer.src) {
 
         alert(
-            "Aucun extrait audio n'est associé à cette référence."
+            "Aucun extrait audio n'est disponible pour cette référence."
         );
 
         return;
@@ -295,64 +370,43 @@ async function toggleAudio() {
     }
 
 
-    if (audioPlayer.paused) {
-
-        try {
-
-            await audioPlayer.play();
-
-            playButton.textContent =
-                "⏸️ METTRE EN PAUSE";
-
-        }
-
-        catch (error) {
-
-            console.error(
-                "Erreur de lecture audio :",
-                error
-            );
-
-            alert(
-                "Impossible de lire cet audio. Vérifie que le fichier MP3 est bien dans le dépôt GitHub."
-            );
-
-        }
-
-    }
-
-    else {
+    // Si l'audio joue actuellement
+    if (!audioPlayer.paused) {
 
         audioPlayer.pause();
 
         playButton.textContent =
             "▶️ REPRENDRE L'EXTRAIT";
 
+        return;
+
     }
 
-}
 
+    // Sinon, lancer ou reprendre
+    audioPlayer.play()
 
-// =====================================================
-// AUDIO MIS EN PAUSE
-// =====================================================
-
-audioPlayer.addEventListener(
-    "pause",
-    function () {
-
-        if (
-            audioPlayer.currentTime > 0 &&
-            !audioPlayer.ended
-        ) {
+        .then(function () {
 
             playButton.textContent =
-                "▶️ REPRENDRE L'EXTRAIT";
+                "⏸️ METTRE EN PAUSE";
 
-        }
+        })
 
-    }
-);
+        .catch(function (error) {
+
+            console.error(
+                "Erreur audio :",
+                error
+            );
+
+            alert(
+                "Impossible de lire l'audio. Vérifie que le fichier MP3 existe bien."
+            );
+
+        });
+
+};
 
 
 // =====================================================
@@ -365,6 +419,25 @@ audioPlayer.addEventListener(
 
         playButton.textContent =
             "⏸️ METTRE EN PAUSE";
+
+    }
+);
+
+
+// =====================================================
+// AUDIO EN PAUSE
+// =====================================================
+
+audioPlayer.addEventListener(
+    "pause",
+    function () {
+
+        if (!audioPlayer.ended) {
+
+            playButton.textContent =
+                "▶️ REPRENDRE L'EXTRAIT";
+
+        }
 
     }
 );
@@ -394,7 +467,7 @@ audioPlayer.addEventListener(
     function () {
 
         console.error(
-            "Impossible de charger :",
+            "Erreur de chargement audio :",
             audioPlayer.src
         );
 
@@ -406,11 +479,10 @@ audioPlayer.addEventListener(
 // AFFICHER LA RÉPONSE
 // =====================================================
 
-function showAnswer() {
+window.showAnswer = function () {
 
     const currentCategory =
         categories[category];
-
 
     const reference =
         currentCategory.references[
@@ -418,32 +490,31 @@ function showAnswer() {
         ];
 
 
-    document.getElementById("answer").textContent =
+    answer.textContent =
         reference.reponse;
 
 
-    document.getElementById("answer").style.display =
+    answer.style.display =
         "block";
 
 
-    document.getElementById("answer-button").style.display =
+    answerButton.style.display =
         "none";
 
-}
+};
 
 
 // =====================================================
 // RÉFÉRENCE SUIVANTE
 // =====================================================
 
-function nextReference() {
+window.nextReference = function () {
 
     const currentCategory =
         categories[category];
 
 
-    // ARRÊTER L'AUDIO
-
+    // Arrêter l'audio
     audioPlayer.pause();
 
     audioPlayer.currentTime = 0;
@@ -452,60 +523,45 @@ function nextReference() {
     currentReference++;
 
 
+    // S'il reste des références
     if (currentReference <= 8) {
 
-        const reference =
-            currentCategory.references[
-                currentReference - 1
-            ];
+        displayReference();
 
-
-        document.getElementById("counter").textContent =
-            "Référence " +
-            currentReference +
-            " / 8";
-
-
-        document.getElementById("reference-title").textContent =
-            reference.titre;
-
-
-        document.getElementById("points").textContent =
-            currentReference +
-            " POINT" +
-            (currentReference > 1 ? "S" : "");
-
-
-        document.getElementById("answer").style.display =
-            "none";
-
-
-        document.getElementById("answer-button").style.display =
-            "inline-block";
-
-
-        loadAudio(reference);
+        return;
 
     }
 
-    else {
 
-        document.querySelector(".game").innerHTML = `
+    // =================================================
+    // FIN DU JEU
+    // =================================================
 
-            <h1>🏆 FIN !</h1>
+    document.querySelector(".game").innerHTML = `
 
-            <h2>${currentCategory.name}</h2>
+        <h1>🏆 FIN !</h1>
 
-            <p>
-                Les 8 références sont terminées.
-            </p>
+        <h2>${currentCategory.name}</h2>
 
-            <button onclick="location.reload()">
-                🔄 RECOMMENCER
-            </button>
+        <p>
+            Les 8 références sont terminées.
+        </p>
 
-        `;
+        <button onclick="location.reload()">
+            🔄 RECOMMENCER
+        </button>
 
-    }
+    `;
+
+};
+
+
+// =====================================================
+// DÉMARRAGE
+// =====================================================
+
+if (categories[category]) {
+
+    displayReference();
 
 }
