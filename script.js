@@ -212,6 +212,60 @@ categories.pirates.references = [
             "pirates8.mp3"
     }
 
+// =====================================================
+// MARVEL
+// =====================================================
+
+categories.marvel.references = [
+
+    {
+        titre: "Référence 1",
+        reponse: "Iron Man — 2008",
+        audio: "marvel1.mp3"
+    },
+
+    {
+        titre: "Référence 2",
+        reponse: "Avengers — 2012",
+        audio: "marvel2.mp3"
+    },
+
+    {
+        titre: "Référence 3",
+        reponse: "Thor — 2011",
+        audio: "marvel3.mp3"
+    },
+
+    {
+        titre: "Référence 4",
+        reponse: "Les Gardiens de la Galaxie — 2014",
+        audio: "marvel4.mp3"
+    },
+
+    {
+        titre: "Référence 5",
+        reponse: "Captain America: Civil War — 2016",
+        audio: "marvel5.mp3"
+    },
+
+    {
+        titre: "Référence 6",
+        reponse: "Doctor Strange — 2016",
+        audio: "marvel6.mp3"
+    },
+
+    {
+        titre: "Référence 7",
+        reponse: "Avengers: Infinity War — 2018",
+        audio: "marvel7.mp3"
+    },
+
+    {
+        titre: "Référence 8",
+        reponse: "Avengers: Endgame — 2019",
+        audio: "marvel8.mp3"
+    }
+
 ];
 
 
