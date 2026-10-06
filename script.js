@@ -8,7 +8,6 @@
 // =====================================================
 
 const params = new URLSearchParams(window.location.search);
-
 const category = (params.get("cat") || "").trim().toLowerCase();
 
 
@@ -214,6 +213,7 @@ categories.pirates.references = [
 
 ];
 
+
 // =====================================================
 // MARVEL
 // =====================================================
@@ -222,50 +222,82 @@ categories.marvel.references = [
 
     {
         titre: "Référence 1",
-        reponse: "Iron Man — 2008",
-        audio: "marvel1.mp3"
+
+        reponse:
+            "Iron Man — 2008",
+
+        audio:
+            "marvel1.mp3"
     },
 
     {
         titre: "Référence 2",
-        reponse: "Avengers — 2012",
-        audio: "marvel2.mp3"
+
+        reponse:
+            "Avengers — 2012",
+
+        audio:
+            "marvel2.mp3"
     },
 
     {
         titre: "Référence 3",
-        reponse: "Thor — 2011",
-        audio: "marvel3.mp3"
+
+        reponse:
+            "Thor — 2011",
+
+        audio:
+            "marvel3.mp3"
     },
 
     {
         titre: "Référence 4",
-        reponse: "Les Gardiens de la Galaxie — 2014",
-        audio: "marvel4.mp3"
+
+        reponse:
+            "Les Gardiens de la Galaxie — 2014",
+
+        audio:
+            "marvel4.mp3"
     },
 
     {
         titre: "Référence 5",
-        reponse: "Captain America: Civil War — 2016",
-        audio: "marvel5.mp3"
+
+        reponse:
+            "Captain America: Civil War — 2016",
+
+        audio:
+            "marvel5.mp3"
     },
 
     {
         titre: "Référence 6",
-        reponse: "Doctor Strange — 2016",
-        audio: "marvel6.mp3"
+
+        reponse:
+            "Doctor Strange — 2016",
+
+        audio:
+            "marvel6.mp3"
     },
 
     {
         titre: "Référence 7",
-        reponse: "Avengers: Infinity War — 2018",
-        audio: "marvel7.mp3"
+
+        reponse:
+            "Avengers: Infinity War — 2018",
+
+        audio:
+            "marvel7.mp3"
     },
 
     {
         titre: "Référence 8",
-        reponse: "Avengers: Endgame — 2019",
-        audio: "marvel8.mp3"
+
+        reponse:
+            "Avengers: Endgame — 2019",
+
+        audio:
+            "marvel8.mp3"
     }
 
 ];
@@ -308,7 +340,7 @@ const audioPlayer =
 
 
 // =====================================================
-// VÉRIFICATION
+// VÉRIFICATION DE LA CATÉGORIE
 // =====================================================
 
 if (!categories[category]) {
@@ -357,7 +389,7 @@ function displayReference() {
 
 
     answer.textContent =
-        "";
+        reference.reponse;
 
 
     answer.style.display =
@@ -379,13 +411,10 @@ function displayReference() {
 
 function loadAudio(reference) {
 
-    // Stopper l'ancien audio
     audioPlayer.pause();
 
     audioPlayer.currentTime = 0;
 
-
-    // Réinitialiser
     audioPlayer.removeAttribute("src");
 
     audioPlayer.load();
@@ -395,7 +424,6 @@ function loadAudio(reference) {
         "▶️ LANCER L'EXTRAIT";
 
 
-    // Si cette référence possède un audio
     if (reference.audio !== "") {
 
         audioPlayer.src =
@@ -414,7 +442,6 @@ function loadAudio(reference) {
 
 window.toggleAudio = function () {
 
-    // Aucun fichier audio
     if (!audioPlayer.src) {
 
         alert(
@@ -426,7 +453,6 @@ window.toggleAudio = function () {
     }
 
 
-    // Si l'audio joue actuellement
     if (!audioPlayer.paused) {
 
         audioPlayer.pause();
@@ -439,7 +465,6 @@ window.toggleAudio = function () {
     }
 
 
-    // Sinon, lancer ou reprendre
     audioPlayer.play()
 
         .then(function () {
@@ -570,7 +595,6 @@ window.nextReference = function () {
         categories[category];
 
 
-    // Arrêter l'audio
     audioPlayer.pause();
 
     audioPlayer.currentTime = 0;
@@ -579,7 +603,6 @@ window.nextReference = function () {
     currentReference++;
 
 
-    // S'il reste des références
     if (currentReference <= 8) {
 
         displayReference();
