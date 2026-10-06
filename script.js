@@ -304,6 +304,79 @@ categories.marvel.references = [
 
 
 // =====================================================
+// STAR WARS
+// =====================================================
+
+categories.starwars.references = [
+
+    {
+        titre: "Référence 1",
+        reponse:
+            "Obi-Wan Kenobi utilise la Force pour persuader les Stormtroopers de les laisser passer à Mos Eisley — Star Wars : Un nouvel espoir",
+        audio:
+            "starwars1.mp3"
+    },
+
+    {
+        titre: "Référence 2",
+        reponse:
+            "Yoda entraîne Luke Skywalker sur Dagobah — Star Wars : L'Empire contre-attaque",
+        audio:
+            "starwars2.mp3"
+    },
+
+    {
+        titre: "Référence 3",
+        reponse:
+            "Han Solo est enfermé dans la carbonite à Bespin — Star Wars : L'Empire contre-attaque",
+        audio:
+            "starwars3.mp3"
+    },
+
+    {
+        titre: "Référence 4",
+        reponse:
+            "Palpatine révèle à Anakin qu'il pourrait utiliser le côté obscur pour empêcher quelqu'un de mourir — Star Wars : La Revanche des Sith",
+        audio:
+            "starwars4.mp3"
+    },
+
+    {
+        titre: "Référence 5",
+        reponse:
+            "Anakin Skywalker et Obi-Wan Kenobi s'affrontent sur Mustafar — Star Wars : La Revanche des Sith",
+        audio:
+            "starwars5.mp3"
+    },
+
+    {
+        titre: "Référence 6",
+        reponse:
+            "Dark Vador révèle à Luke Skywalker qu'il est son père — Star Wars : L'Empire contre-attaque",
+        audio:
+            "starwars6.mp3"
+    },
+
+    {
+        titre: "Référence 7",
+        reponse:
+            "Luke Skywalker utilise la projection de Force pour affronter Kylo Ren sur Crait et permettre à la Résistance de s'échapper — Star Wars : Les Derniers Jedi",
+        audio:
+            "starwars7.mp3"
+    },
+
+    {
+        titre: "Référence 8",
+        reponse:
+            "Luke Skywalker refuse de tuer Dark Vador, jette son sabre laser et choisit de rester du côté lumineux — Star Wars : Le Retour du Jedi",
+        audio:
+            "starwars8.mp3"
+    }
+
+];
+
+
+// =====================================================
 // VARIABLES
 // =====================================================
 
