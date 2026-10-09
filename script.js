@@ -450,6 +450,125 @@ categories.louisdefunes.references = [
 
 ];
 
+// =====================================================
+// CHRISTIAN CLAVIER
+// =====================================================
+
+categories.christianclavier.references = [
+  {
+    titre: "Les Visiteurs — Jacquouille découvre l’interrupteur et joue avec la lumière pendant le dîner.",
+    reponse: "Jour ! Nuit !",
+    audio: "christianclavier1.mp3"
+  },
+  {
+    titre: "Les Visiteurs — Jacquouille aperçoit une voiture moderne et croit voir un véhicule diabolique.",
+    reponse: "Sire ! Un Sarrasin dans une charriotte du diable !",
+    audio: "christianclavier2.mp3"
+  },
+  {
+    titre: "Cocorico — Frédéric découvre les résultats de son test ADN et réagit avec colère.",
+    reponse: "Qu’est-ce que c’est que cette connerie ?",
+    audio: "christianclavier3.mp3"
+  },
+  {
+    titre: "Qu’est-ce qu’on a fait au Bon Dieu ? — Claude Verneuil se retrouve face à ses gendres et laisse apparaître ses préjugés.",
+    reponse: "Moi non plus, je ne suis pas raciste et j’aurais préféré que ma fille épouse un Blanc, Européen, Français.",
+    audio: "christianclavier4.mp3"
+  },
+  {
+    titre: "Les Bronzés font du ski — Jérôme découvre que le patient qu’on lui amène est un cochon nommé Copain.",
+    reponse: "Mais bouffez-le, votre cochon !",
+    audio: "christianclavier5.mp3"
+  },
+  {
+    titre: "Cocorico — Pendant la visite du domaine, Gérard parle de billard et Frédéric lui lance une pique.",
+    reponse: "Oui, bien sûr, comme dans tous les bars PMU.",
+    audio: "christianclavier6.mp3"
+  },
+  {
+    titre: "Les Visiteurs — Jacquouille découvre une situation moderne qui le dépasse et s’énerve.",
+    reponse: "Mais qu’est-ce que c’est que ce binz ?",
+    audio: "christianclavier7.mp3"
+  },
+  {
+    titre: "Astérix et Obélix contre César — Après le piège des Romains, Astérix et Obélix se retrouvent face à Caius Bonus et se moquent de lui.",
+    reponse: "Tu te sens ennuyé sans nous !",
+    audio: "christianclavier8.mp3"
+  }
+
+];
+
+// =====================================================
+// CHRISTIAN CLAVIER
+// =====================================================
+
+categories.christianclavier.references = [
+
+    {
+        titre: "Référence 1",
+        reponse:
+            "Jacquouille découvre l'interrupteur et s'amuse à allumer et éteindre la lumière en répétant « Jour ! Nuit ! » — Les Visiteurs",
+        audio:
+            "clavier1.mp3"
+    },
+
+    {
+        titre: "Référence 2",
+        reponse:
+            "Jacquouille aperçoit une voiture moderne et la prend pour une charrette diabolique — Les Visiteurs",
+        audio:
+            "clavier2.mp3"
+    },
+
+    {
+        titre: "Référence 3",
+        reponse:
+            "Frédéric Bouvier-Sauvage découvre les résultats de son test ADN et apprend des origines familiales inattendues — Cocorico",
+        audio:
+            "clavier3.mp3"
+    },
+
+    {
+        titre: "Référence 4",
+        reponse:
+            "Claude Verneuil se retrouve face à ses quatre gendres et laisse apparaître ses préjugés sur leurs origines — Qu'est-ce qu'on a fait au Bon Dieu ?",
+        audio:
+            "clavier4.mp3"
+    },
+
+    {
+        titre: "Référence 5",
+        reponse:
+            "Le docteur Jérôme découvre que le patient qu'on lui amène est un cochon nommé Copain et s'énerve contre ses propriétaires — Les Bronzés font du ski",
+        audio:
+            "clavier5.mp3"
+    },
+
+    {
+        titre: "Référence 6",
+        reponse:
+            "Pendant la visite du domaine familial, Gérard parle de billard et Frédéric lui répond avec ironie : « Oui, bien sûr, comme dans tous les bars PMU » — Cocorico",
+        audio:
+            "clavier6.mp3"
+    },
+
+    {
+        titre: "Référence 7",
+        reponse:
+            "Jacquouille découvre le monde moderne et s'exclame : « Mais qu'est-ce que c'est que ce binz ? » — Les Visiteurs",
+        audio:
+            "clavier7.mp3"
+    },
+
+    {
+        titre: "Référence 8",
+        reponse:
+            "Astérix et Obélix se retrouvent dans l'arène du cirque romain et doivent affronter les épreuves organisées par les Romains — Astérix et Obélix contre César",
+        audio:
+            "clavier8.mp3"
+    }
+
+];
 
 
 // =====================================================
