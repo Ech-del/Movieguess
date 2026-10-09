@@ -376,6 +376,80 @@ categories.starwars.references = [
 ];
 
 
+
+ // =====================================================
+ // LOUIS DE FUNÈS
+ // =====================================================
+
+categories.louisdefunes.references = [
+
+    {
+        titre: "Référence 1",
+        reponse:
+            "Le Corniaud — Saroyan percute la 2 CV d'Antoine Maréchal, qui se retrouve piéton.",
+        audio:
+            "louisdefunes1.mp3"
+    },
+
+    {
+        titre: "Référence 2",
+        reponse:
+            "Les Aventures de Rabbi Jacob — Victor Pivert se déguise en rabbin et doit jouer le jeu pour ne pas être démasqué.",
+        audio:
+            "louisdefunes2.mp3"
+    },
+
+    {
+        titre: "Référence 3",
+        reponse:
+            "La Grande Vadrouille — Stanislas Lefort et Augustin Bouvet aident des aviateurs britanniques à rejoindre la zone libre.",
+        audio:
+            "louisdefunes3.mp3"
+    },
+
+    {
+        titre: "Référence 4",
+        reponse:
+            "Le Grand Restaurant — Monsieur Septime dirige son restaurant avec une exigence complètement excessive.",
+        audio:
+            "louisdefunes4.mp3"
+    },
+
+    {
+        titre: "Référence 5",
+        reponse:
+            "La Folie des grandeurs — Don Salluste remarque qu'il manque une pièce dans son rituel matinal.",
+        audio:
+            "louisdefunes5.mp3"
+    },
+
+    {
+        titre: "Référence 6",
+        reponse:
+            "Le Gendarme de Saint-Tropez — Ludovic Cruchot découvre sa nouvelle affectation et rejoint la brigade.",
+        audio:
+            "louisdefunes6.mp3"
+    },
+
+    {
+        titre: "Référence 7",
+        reponse:
+            "L'Avare — Harpagon est obsédé par son argent et sa cassette.",
+        audio:
+            "louisdefunes7.mp3"
+    },
+
+    {
+        titre: "Référence 8",
+        reponse:
+            "Le Gendarme et les Extraterrestres — Cruchot se déguise en religieuse et se retrouve à chanter dans une chorale.",
+        audio:
+            "louisdefunes8.mp3"
+    }
+
+];
+
+
 // =====================================================
 // VARIABLES
 // =====================================================
