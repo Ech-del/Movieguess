@@ -377,16 +377,17 @@ categories.starwars.references = [
 
 
 
- // =====================================================
- // LOUIS DE FUNÈS
- // =====================================================
+
+// =====================================================
+// LOUIS DE FUNÈS
+// =====================================================
 
 categories.louisdefunes.references = [
 
     {
         titre: "Référence 1",
         reponse:
-            "Le Corniaud — Saroyan percute la 2 CV d'Antoine Maréchal, qui se retrouve piéton.",
+            "Le Corniaud — Saroyan percute la 2 CV d'Antoine Maréchal et la réduit en morceaux.",
         audio:
             "louisdefunes1.mp3"
     },
@@ -394,7 +395,7 @@ categories.louisdefunes.references = [
     {
         titre: "Référence 2",
         reponse:
-            "Les Aventures de Rabbi Jacob — Victor Pivert se déguise en rabbin et doit jouer le jeu pour ne pas être démasqué.",
+            "Les Aventures de Rabbi Jacob — Victor Pivert, déguisé en Rabbi Jacob, participe à la danse traditionnelle dans la rue des Rosiers.",
         audio:
             "louisdefunes2.mp3"
     },
@@ -402,7 +403,7 @@ categories.louisdefunes.references = [
     {
         titre: "Référence 3",
         reponse:
-            "La Grande Vadrouille — Stanislas Lefort et Augustin Bouvet aident des aviateurs britanniques à rejoindre la zone libre.",
+            "La Grande Vadrouille — Stanislas Lefort et Augustin Bouvet retrouvent leur contact britannique aux bains turcs et fredonnent Tea for Two.",
         audio:
             "louisdefunes3.mp3"
     },
@@ -410,7 +411,7 @@ categories.louisdefunes.references = [
     {
         titre: "Référence 4",
         reponse:
-            "Le Grand Restaurant — Monsieur Septime dirige son restaurant avec une exigence complètement excessive.",
+            "Le Grand Restaurant — Septime explique la recette du soufflé tandis que son visage prend les traits d'Hitler.",
         audio:
             "louisdefunes4.mp3"
     },
@@ -418,7 +419,7 @@ categories.louisdefunes.references = [
     {
         titre: "Référence 5",
         reponse:
-            "La Folie des grandeurs — Don Salluste remarque qu'il manque une pièce dans son rituel matinal.",
+            "Le Gendarme de Saint-Tropez — Cruchot accompagne sœur Clotilde dans sa 2 CV lancée à toute allure.",
         audio:
             "louisdefunes5.mp3"
     },
@@ -426,7 +427,7 @@ categories.louisdefunes.references = [
     {
         titre: "Référence 6",
         reponse:
-            "Le Gendarme de Saint-Tropez — Ludovic Cruchot découvre sa nouvelle affectation et rejoint la brigade.",
+            "La Soupe aux choux — Le médecin examine le Glaude, qui tente de lui expliquer ce qui se passe chez lui.",
         audio:
             "louisdefunes6.mp3"
     },
@@ -434,7 +435,7 @@ categories.louisdefunes.references = [
     {
         titre: "Référence 7",
         reponse:
-            "L'Avare — Harpagon est obsédé par son argent et sa cassette.",
+            "La Folie des grandeurs — Blaze réveille Don Salluste avec la célèbre formule : Il est l'or, monseignor.",
         audio:
             "louisdefunes7.mp3"
     },
@@ -442,12 +443,13 @@ categories.louisdefunes.references = [
     {
         titre: "Référence 8",
         reponse:
-            "Le Gendarme et les Extraterrestres — Cruchot se déguise en religieuse et se retrouve à chanter dans une chorale.",
+            "Le Gendarme à New York — Cruchot donne une leçon d'anglais à sa brigade, avec la phrase My tailor is rich.",
         audio:
             "louisdefunes8.mp3"
     }
 
 ];
+
 
 
 // =====================================================
